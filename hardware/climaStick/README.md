@@ -7,6 +7,9 @@ This board is a complete Internet of Things development kit, that integrates WiF
 <p align="center">
 <img src="assets/i0.PNG?raw=true"   width="600" height="350" />
 </p>
+<p align="center">
+<img src="assets/i0_1.PNG?raw=true"   width="600" height="350" />
+</p>
 
 ## Board Features
 
@@ -50,7 +53,10 @@ This section covers how to setup your computer to start working with the ClimaSt
 <img src="assets/i5.PNG?raw=true"   width="600" height="400" />
 </p>
 
-3. Now you can program almost any ESP8266 directly from the Arduino IDE. From the Tools > Boards you should see now the new ESP8266 boards installed. To program the Thinger.io ClimaStick you should select **NODE_MCU V1.0 (ESP-12E Module)**.
+3. Now you can program almost any ESP82XX processor directly from the Arduino IDE. From the Tools > Boards you should see now the new ESP82XX boards installed and Then: 
+  -To program Thinger.io ClimaStick you should select **NODE_MCU V1.0 (ESP-12E Module)**.
+  -To program Thinger.io ClimaStick_V2, selecto **WeMos D1 Mini Lite**
+  
 <p align="center">
 <img src="assets/i6.png?raw=true"   width="600" height="550" />
 </p>
@@ -62,7 +68,7 @@ This section covers how to setup your computer to start working with the ClimaSt
 
 6. Connect the ClimaStick to your computer and select its serial communication port number on: Tools > Port. It normally will be a COM port, or named as /dev/cu.SLAB_USBtoUART on Mac.
 
-7. Now you can start developing with Thinger.io ClimaStick! It is helpful to start with the examples provided in the library, by opening File > Examples > ClimaStick
+7. Now you can start developing with Thinger.io ClimaStick! It is helpful to start with the examples provided in the library, by opening File > Examples > "ClimaStick" or "ClimaStick V2"
 
 ## Uploading firmware
 
@@ -96,8 +102,11 @@ The ClimaStick_Auto example code, is a little sketch that integrates all ClimaSt
 ClimaStick thing(USERNAME, DEVICE_ID, DEVICE_CREDENTIAL);
  
 void setup() {
+  // configure board wifi
   thing.add_wifi(SSID, SSID_PASSWORD);
+  // initialize board sensors
   thing.init_sensors();
+  // define resources for all features
   thing.init_resources();
 }
 
@@ -286,8 +295,8 @@ This section covers different considerations while using the board.
 
 Your can download the device datasheet from the following link:
 
-[ClimaStick Datasheet >](assets/ClimaStick_Datasheet.pdf)
-
+[ClimaStick V1 Datasheet >](assets/ClimaStick_Datasheet.pdf)
+[ClimaStick V2 Datasheet >](assets/ClimaStick_V2_Datasheet.pdf)
 
 ## Disclaimer
 * This device is commercialized by the Thinger.io platform (THINK BIG LABS S.L) as a development kit, so it is not subject to commerce homologation rules. The device owner is liable for all injuries to third parties and damage to their properties. 
